@@ -3,15 +3,17 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "scss/*": ["./scss/*"],
+      "i18n/*": ["./i18n/*"],
+      "enums/*": ["./enums/*"],
+      "types/*": ["./types/*"],
+      "hooks/*": ["./hooks/*"],
+      "helpers/*": ["./helpers/*"],
+      "services/*": ["./services/*"],
+      "constants/*": ["./constants/*"],
+      "components/*": ["./components/*"],
+      "styles/*": ["./styles/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
