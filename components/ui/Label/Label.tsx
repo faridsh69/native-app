@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { StyleProp, Text, TextStyle, View } from 'react-native'
 
 import { ColorsEnum, FontsEnum, IconsEnum, TextAlignEnum } from 'enums/enums'

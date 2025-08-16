@@ -17,6 +17,10 @@ export default function HomeScreen() {
         <Image source={require('assets/images/partial-react-logo.png')} style={styles.reactLogo} />
       }
     >
+      {/* <Button label='helooooo butc' />
+      <ButtonStory />
+      <LabelStory /> */}
+      {/* <Story /> */}
       <ThemedView style={styles.titleContainer}>
         <ThemedText type='title'>Home</ThemedText>
         <HelloWave />

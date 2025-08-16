@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
-import { BorderRadius, Colors, Sizes, Spacing } from 'styles/common.style'
+
+import { Colors, Sizes, Spacing } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   button: {
@@ -9,25 +10,26 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     userSelect: 'none',
     gap: 8,
+    borderRadius: 20,
   },
 
   size_s: {
     height: Sizes.s,
     minHeight: Sizes.s,
     paddingHorizontal: Spacing.s,
-    borderRadius: BorderRadius.m,
+    // borderRadius: BorderRadius.m,
   },
   size_m: {
     height: Sizes.m,
     minHeight: Sizes.m,
     paddingHorizontal: Spacing.m,
-    borderRadius: BorderRadius.m,
+    // borderRadius: BorderRadius.m,
   },
   size_l: {
     height: Sizes.l,
     minHeight: Sizes.l,
     paddingHorizontal: Spacing.l,
-    borderRadius: BorderRadius.l,
+    // borderRadius: BorderRadius.l,
   },
 
   variant_primary: {

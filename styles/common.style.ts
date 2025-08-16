@@ -1,6 +1,5 @@
-import { TextStyle } from 'react-native'
-
 export const Colors = {
+  // designColors
   white: '#ffffff',
   black: '#000000',
 
@@ -17,13 +16,11 @@ export const Colors = {
 
   primaryMain: '#000000',
   primaryInverse: '#ffffff',
-  primaryDark: '#333333',
-  primaryLight: '#f2f2f2',
+  primaryTransparent: '#f2f2f2',
 
   secondaryMain: '#ffffff',
   secondaryInverse: '#000000',
-  secondaryDark: '#333333',
-  secondaryLight: '#f2f2f2',
+  secondaryTransparent: '#f2f2f2',
 
   error: '#c92121',
   errorLight: '#ee2c2c',
@@ -35,42 +32,33 @@ export const Colors = {
 }
 
 export const FontSizes = {
-  text12: 12,
-  text14: 14,
-  text16: 16,
-  text18: 18,
-  text20: 20,
-  text22: 22,
-  text26: 26,
-  text30: 30,
-  text40: 40,
-  text50: 50,
+  // designFonts
+  text12: { fontSize: 12, fontWeight: 400 },
+  text14: { fontSize: 14, fontWeight: 400 },
+  text16: { fontSize: 16, fontWeight: 400 },
+  text18: { fontSize: 18, fontWeight: 400 },
+
+  label14: { fontSize: 14, fontWeight: 500 },
+  label16: { fontSize: 16, fontWeight: 500 },
+  label18: { fontSize: 18, fontWeight: 500 },
+  label20: { fontSize: 20, fontWeight: 500 },
+  label30: { fontSize: 30, fontWeight: 500 },
+  label40: { fontSize: 40, fontWeight: 500 },
+  label50: { fontSize: 50, fontWeight: 500 },
+
+  header14: { fontSize: 14, fontWeight: 700 },
+  header16: { fontSize: 16, fontWeight: 700 },
+  header18: { fontSize: 18, fontWeight: 700 },
+  header20: { fontSize: 20, fontWeight: 700 },
+  header22: { fontSize: 22, fontWeight: 700 },
+  header26: { fontSize: 26, fontWeight: 700 },
+  header30: { fontSize: 30, fontWeight: 700 },
 }
 
-export const FontWeights = {
-  regular: '400' as TextStyle['fontWeight'],
-  medium: '500' as TextStyle['fontWeight'],
-  bold: '700' as TextStyle['fontWeight'],
-}
+export const Spacing = { s: 8, m: 16, l: 20 } // designSpacing
+export const Sizes = { s: 30, m: 40, l: 48 } // designHeights
+export const BorderRadius = { s: 4, m: 6, l: 8 } // designBorderRadius
 
-export const fonts: { [key: string]: TextStyle } = {
-  text12: { fontSize: FontSizes.text12, fontWeight: FontWeights.regular },
-  text14: { fontSize: FontSizes.text14, fontWeight: FontWeights.regular },
-  text16: { fontSize: FontSizes.text16, fontWeight: FontWeights.regular },
-  header12: { fontSize: FontSizes.text12, fontWeight: FontWeights.bold },
-  header14: { fontSize: FontSizes.text14, fontWeight: FontWeights.bold },
-  header16: { fontSize: FontSizes.text16, fontWeight: FontWeights.bold },
-  header18: { fontSize: FontSizes.text18, fontWeight: FontWeights.bold },
-  header20: { fontSize: FontSizes.text20, fontWeight: FontWeights.bold },
-  header22: { fontSize: FontSizes.text22, fontWeight: FontWeights.bold },
-  header26: { fontSize: FontSizes.text26, fontWeight: FontWeights.bold },
-  header30: { fontSize: FontSizes.text30, fontWeight: FontWeights.bold },
-}
-
-export const Spacing = { s: 8, m: 16, l: 20 }
-export const Sizes = { s: 30, m: 40, l: 48 }
-export const BorderRadius = { s: 4, m: 6, l: 8 }
-
-export const inputStyle: TextStyle = {
-  fontFeatureSettings: "'pnum' on, 'lnum' on",
-}
+// export const inputStyle = {
+//   fontFeatureSettings: "'pnum' on, 'lnum' on",
+// }

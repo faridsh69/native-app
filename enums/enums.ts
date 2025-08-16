@@ -1,4 +1,4 @@
-import { BorderRadius, Colors, fonts, Sizes, Spacing } from 'styles/common.style'
+import { BorderRadius, Colors, Sizes, Spacing, fontClasses } from 'styles/common.style'
 
 export enum SizesEnum {
   S = 's',
@@ -27,34 +27,34 @@ export const ColorsEnum = {
 
   PrimaryMain: Colors.primaryMain,
   PrimaryInverse: Colors.primaryInverse,
-  PrimaryTransparent: Colors.primaryLight,
+  PrimaryTransparent: Colors.primaryTransparent,
 
   SecondaryMain: Colors.secondaryMain,
   SecondaryInverse: Colors.secondaryInverse,
-  SecondaryTransparent: Colors.secondaryLight,
+  SecondaryTransparent: Colors.secondaryTransparent,
 
   Error: Colors.error,
   Disabled: Colors.disabledMain,
-} as const
-
-export type ColorsEnum = (typeof ColorsEnum)[keyof typeof ColorsEnum]
+}
 
 export const FontsEnum = {
-  Text12: fonts.text12,
-  Text14: fonts.text14,
-  Text16: fonts.text16,
+  Text12: fontClasses.text12,
+  Text14: fontClasses.text14,
+  Text16: fontClasses.text16,
+  Text18: fontClasses.text18,
 
-  Header12: fonts.header12,
-  Header14: fonts.header14,
-  Header16: fonts.header16,
-  Header18: fonts.header18,
-  Header20: fonts.header20,
-  Header22: fonts.header22,
-  Header26: fonts.header26,
-  Header30: fonts.header30,
-} as const
+  // @TODO 1
 
-export type FontsEnum = (typeof FontsEnum)[keyof typeof FontsEnum]
+  // labels
+
+  Header14: fontClasses.header14,
+  Header16: fontClasses.header16,
+  Header18: fontClasses.header18,
+  Header20: fontClasses.header20,
+  Header22: fontClasses.header22,
+  Header26: fontClasses.header26,
+  Header30: fontClasses.header30,
+}
 
 export enum SpacingEnum {
   S = Spacing.s,

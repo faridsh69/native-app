@@ -1,7 +1,11 @@
-import { Icon } from 'components/ui/Icon/Icon'
-import { FontsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 import React from 'react'
+
 import { StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native'
+
+import { FontsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
+
+import { Icon } from 'components/ui/Icon/Icon'
+
 import { styles } from './Button.styles'
 import { ButtonProps } from './Button.types'
 

@@ -3,7 +3,6 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "scss/*": ["./scss/*"],
       "i18n/*": ["./i18n/*"],
       "enums/*": ["./enums/*"],
       "types/*": ["./types/*"],
