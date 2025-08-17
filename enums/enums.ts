@@ -183,6 +183,12 @@ export const variantColorMap: Record<VariantsEnum, string> = {
   [VariantsEnum.Text]: ColorsEnum.SecondaryTransparent,
 }
 
+export const SIZE_MAP: Record<SizesEnum, number> = {
+  [SizesEnum.S]: SizesPixelEnum.s,
+  [SizesEnum.M]: SizesPixelEnum.m,
+  [SizesEnum.L]: SizesPixelEnum.l,
+}
+
 type ValueOf<T> = T[keyof T]
 
 export type FontsEnumType = ValueOf<typeof FontsEnum>

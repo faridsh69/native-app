@@ -5,6 +5,7 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import { ButtonStory } from 'components/stories/Button.Story'
 import { IconsStory } from 'components/stories/Icon.Story'
 import { LabelStory } from 'components/stories/Label.Story'
+import { LoaderStory } from 'components/stories/Loader.story'
 import { RatingStory } from 'components/stories/Rating.Story'
 import { TabItemsStory } from 'components/stories/TabItems.story'
 
@@ -18,6 +19,7 @@ export default function HomeScreen() {
           <ButtonStory />
           <TabItemsStory />
           <RatingStory />
+          <LoaderStory />
         </View>
       </ScrollView>
     </SafeAreaView>
