@@ -172,6 +172,11 @@ export enum VariantsEnum {
   Text = 'text',
 }
 
+export enum DirectionsEnum {
+  Vertical = 'vertical',
+  Horizontal = 'horizontal',
+}
+
 export const variantColorMap: Record<VariantsEnum, string> = {
   [VariantsEnum.Primary]: ColorsEnum.PrimaryMain,
   [VariantsEnum.Secondary]: ColorsEnum.SecondaryMain,
@@ -183,3 +188,4 @@ type ValueOf<T> = T[keyof T]
 export type FontsEnumType = ValueOf<typeof FontsEnum>
 export type ColorsEnumType = ValueOf<typeof ColorsEnum>
 export type PlacementsEnumType = ValueOf<typeof PlacementsEnum>
+export type DirectionsEnumType = ValueOf<typeof DirectionsEnum>
