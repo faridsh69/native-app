@@ -8,6 +8,7 @@ import { LabelStory } from 'components/stories/Label.Story'
 import { LoaderStory } from 'components/stories/Loader.story'
 import { RatingStory } from 'components/stories/Rating.Story'
 import { TabItemsStory } from 'components/stories/TabItems.story'
+import { TextareaStory } from 'components/stories/Textarea.story'
 
 export default function HomeScreen() {
   return (
@@ -20,6 +21,7 @@ export default function HomeScreen() {
           <TabItemsStory />
           <RatingStory />
           <LoaderStory />
+          <TextareaStory />
         </View>
       </ScrollView>
     </SafeAreaView>

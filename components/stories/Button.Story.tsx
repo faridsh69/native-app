@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cell: {},
-
   section: { marginTop: 16, gap: 8 },
   sectionTitle: { fontSize: 14, fontWeight: '600', opacity: 0.85 },
 })
