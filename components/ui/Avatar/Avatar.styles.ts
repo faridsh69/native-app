@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native'
 
 import { SizesEnum } from 'enums/enums'
-import { Colors, Sizes } from 'styles/common.style'
+import { designColors, designHeights } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   avatar: {
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    backgroundColor: Colors.grey100,
+    backgroundColor: designColors.grey100,
     borderWidth: 1,
     borderColor: 'transparent',
   },
@@ -19,24 +19,24 @@ export const styles = StyleSheet.create({
   },
 
   size_s: {
-    width: Sizes.s,
-    height: Sizes.s,
-    borderRadius: Sizes.s / 2,
+    width: designHeights.s,
+    height: designHeights.s,
+    borderRadius: designHeights.s / 2,
   },
   size_m: {
-    width: Sizes.m,
-    height: Sizes.m,
-    borderRadius: Sizes.m / 2,
+    width: designHeights.m,
+    height: designHeights.m,
+    borderRadius: designHeights.m / 2,
   },
   size_l: {
-    width: Sizes.l,
-    height: Sizes.l,
-    borderRadius: Sizes.l / 2,
+    width: designHeights.l,
+    height: designHeights.l,
+    borderRadius: designHeights.l / 2,
   },
 })
 
 export const iconSize: Record<SizesEnum, number> = {
-  [SizesEnum.S]: Sizes.s * 0.5,
-  [SizesEnum.M]: Sizes.m * 0.5,
-  [SizesEnum.L]: Sizes.l * 0.5,
+  [SizesEnum.S]: designHeights.s * 0.5,
+  [SizesEnum.M]: designHeights.m * 0.5,
+  [SizesEnum.L]: designHeights.l * 0.5,
 }

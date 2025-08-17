@@ -1,15 +1,23 @@
-import { StyleProp, TextProps, TextStyle } from 'react-native'
+import { TextStyle } from 'react-native'
 
-import { FontsEnum, TextAlignEnum } from 'enums/enums'
+import { ColorsEnumType, FontsEnumType, PlacementsEnumType } from 'enums/enums'
 
-export interface LabelProps extends TextProps {
-  label: string
+export type LabelProps = {
+  label?: string | number | null
+  font?: FontsEnumType
   disabled?: boolean
-  required?: boolean
+  linesCount?: number
   hasError?: boolean
   active?: boolean
   hint?: string
-  font?: FontsEnum
-  textAlign?: TextAlignEnum
-  style?: StyleProp<TextStyle>
+  zIndex?: number
+  hintZIndex?: number
+  mouseEnterDelay?: number
+  forceTooltip?: boolean
+  color?: ColorsEnumType
+  textAlign?: TextStyle['textAlign']
+  required?: boolean
+  tooltipPlacement?: PlacementsEnumType
+  onClick?: () => void
+  cursorPointer?: boolean
 }

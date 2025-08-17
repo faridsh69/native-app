@@ -1,46 +1,83 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
-import { StyleProp, Text, TextStyle, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 
-import { ColorsEnum, FontsEnum, IconsEnum, TextAlignEnum } from 'enums/enums'
+import { ColorsEnum, FontsEnum } from 'enums/enums'
 import { useThemeColor } from 'hooks/useThemeColor'
 
-import { Icon } from '../Icon/Icon'
 import { styles } from './Label.styles'
 import { LabelProps } from './Label.types'
 
-export const Label = ({
-  label,
-  disabled = false,
-  required = false,
-  hasError = false,
-  active = false,
-  hint,
-  font = FontsEnum.Text16,
-  textAlign = TextAlignEnum.Left,
-  style,
-  lightColor,
-  darkColor,
-  ...rest
-}: LabelProps & { lightColor?: string; darkColor?: string }) => {
+export const Label = (props: LabelProps) => {
+  const {
+    label = '',
+    disabled = false,
+    font = FontsEnum.Label16,
+    linesCount = 1,
+    hasError = false,
+    active = false,
+    color,
+    textAlign = 'left',
+    required = false,
+    onClick,
+    cursorPointer = false,
+  } = props
   if (!label) return null
 
-  const baseColor = useThemeColor({ light: lightColor, dark: darkColor }, ColorsEnum.Black)
+  const baseColor = useThemeColor({}, ColorsEnum.Black)
   const errorColor = useThemeColor({}, ColorsEnum.Error)
   const disabledColor = useThemeColor({}, ColorsEnum.Disabled)
   const activeColor = useThemeColor({}, ColorsEnum.PrimaryMain)
 
-  const color = hasError ? errorColor : disabled ? disabledColor : active ? activeColor : baseColor
+  const textColor = useMemo(() => {
+    const stateColor = hasError
+      ? errorColor
+      : disabled
+        ? disabledColor
+        : active
+          ? activeColor
+          : baseColor
 
-  const fontStyle: StyleProp<TextStyle> = [font, { color: color.toString(), textAlign }, style]
+    return color ?? stateColor
+  }, [hasError, disabled, active, color, errorColor, disabledColor, activeColor, baseColor])
 
-  return (
-    <View style={styles.wrapper} accessible accessibilityLabel={label}>
-      <Text style={fontStyle} {...rest}>
+  const wrapperStyle = [styles.wrapper, cursorPointer && styles.cursorPointer]
+  const textStyle = [font, styles.textBase, { color: textColor, textAlign }]
+
+  const Content = (
+    <View style={styles.textContainer}>
+      {/* @ts-ignore */}
+      <Text style={textStyle} numberOfLines={linesCount} ellipsizeMode='tail'>
         {label}
       </Text>
-      {required && <Text style={[fontStyle, styles.required]}> *</Text>}
-      {hint && <Icon icon={IconsEnum.Info} style={styles.hint} />}
+      {required ? (
+        <Text
+          style={[styles.required, { color: useThemeColor({}, ColorsEnum.Error) }]}
+          accessibilityElementsHidden
+          importantForAccessibility='no'
+        >
+          *
+        </Text>
+      ) : null}
+    </View>
+  )
+
+  if (!onClick) {
+    return <View style={wrapperStyle}>{Content}</View>
+  }
+
+  return (
+    <View style={wrapperStyle}>
+      <Pressable
+        onPress={onClick}
+        disabled={disabled}
+        accessibilityRole='button'
+        accessibilityState={{ disabled, selected: active }}
+        android_ripple={{}}
+        style={styles.pressable}
+      >
+        {Content}
+      </Pressable>
     </View>
   )
 }

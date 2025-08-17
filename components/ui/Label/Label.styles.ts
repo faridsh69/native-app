@@ -1,15 +1,39 @@
-import { StyleSheet } from 'react-native'
-import { Spacing } from 'styles/common.style'
+import { Platform, StyleSheet } from 'react-native'
+
+import { designSpacing } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: designSpacing.s,
+    maxWidth: '100%',
+    minWidth: 0,
+  },
+  pressable: {
+    maxWidth: '100%',
+    minWidth: 0,
+    flexShrink: 1,
+  },
+  textContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+    maxWidth: '100%',
+    minWidth: 0,
+    flexShrink: 1,
+  },
+  textBase: {
+    maxWidth: '100%',
+    minWidth: 0,
+    flexShrink: 1,
   },
   required: {
-    marginLeft: 2,
+    marginLeft: designSpacing.s,
+    width: 14,
+    textAlign: 'center',
   },
-  hint: {
-    marginLeft: Spacing.s,
-  },
+  cursorPointer: Platform.select({
+    web: { cursor: 'pointer' },
+    default: {},
+  }),
 })

@@ -1,4 +1,4 @@
-import { FontsEnum, IconsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
+import { FontsEnumType, IconsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 
 export type ButtonProps = {
   type?: string
@@ -12,7 +12,7 @@ export type ButtonProps = {
   onClick?: () => void
   noBorderRadius?: SidesEnum[]
   width?: string | number
-  font?: FontsEnum
+  font?: FontsEnumType
   noHover?: boolean
   onPress?: () => void
 }

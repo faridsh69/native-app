@@ -1,4 +1,10 @@
-import { BorderRadius, Colors, Sizes, Spacing, fontClasses } from 'styles/common.style'
+import {
+  designBorderRadius,
+  designColors,
+  designFonts,
+  designHeights,
+  designSpacing,
+} from 'styles/common.style'
 
 export enum SizesEnum {
   S = 's',
@@ -7,65 +13,69 @@ export enum SizesEnum {
 }
 
 export enum SizesPixelEnum {
-  s = Sizes.s,
-  m = Sizes.m,
-  l = Sizes.l,
+  s = designHeights.s,
+  m = designHeights.m,
+  l = designHeights.l,
 }
 
 export const ColorsEnum = {
-  Black: Colors.black,
-  White: Colors.white,
+  Black: designColors.black,
+  White: designColors.white,
 
-  Grey100: Colors.grey100,
-  Grey200: Colors.grey200,
-  Grey300: Colors.grey300,
-  Grey400: Colors.grey400,
-  Grey500: Colors.grey500,
-  Grey600: Colors.grey600,
-  Grey700: Colors.grey700,
-  Grey800: Colors.grey800,
+  Grey100: designColors.grey100,
+  Grey200: designColors.grey200,
+  Grey300: designColors.grey300,
+  Grey400: designColors.grey400,
+  Grey500: designColors.grey500,
+  Grey600: designColors.grey600,
+  Grey700: designColors.grey700,
+  Grey800: designColors.grey800,
 
-  PrimaryMain: Colors.primaryMain,
-  PrimaryInverse: Colors.primaryInverse,
-  PrimaryTransparent: Colors.primaryTransparent,
+  PrimaryMain: designColors.primaryMain,
+  PrimaryInverse: designColors.primaryInverse,
+  PrimaryTransparent: designColors.primaryTransparent,
 
-  SecondaryMain: Colors.secondaryMain,
-  SecondaryInverse: Colors.secondaryInverse,
-  SecondaryTransparent: Colors.secondaryTransparent,
+  SecondaryMain: designColors.secondaryMain,
+  SecondaryInverse: designColors.secondaryInverse,
+  SecondaryTransparent: designColors.secondaryTransparent,
 
-  Error: Colors.error,
-  Disabled: Colors.disabledMain,
+  Error: designColors.error,
+  Disabled: designColors.disabledMain,
 }
 
 export const FontsEnum = {
-  Text12: fontClasses.text12,
-  Text14: fontClasses.text14,
-  Text16: fontClasses.text16,
-  Text18: fontClasses.text18,
+  Text12: designFonts.text12,
+  Text14: designFonts.text14,
+  Text16: designFonts.text16,
+  Text18: designFonts.text18,
 
-  // @TODO 1
+  Label14: designFonts.label14,
+  Label16: designFonts.label16,
+  Label18: designFonts.label18,
+  Label20: designFonts.label20,
+  Label30: designFonts.label30,
+  Label40: designFonts.label40,
+  Label50: designFonts.label50,
 
-  // labels
-
-  Header14: fontClasses.header14,
-  Header16: fontClasses.header16,
-  Header18: fontClasses.header18,
-  Header20: fontClasses.header20,
-  Header22: fontClasses.header22,
-  Header26: fontClasses.header26,
-  Header30: fontClasses.header30,
+  Header14: designFonts.header14,
+  Header16: designFonts.header16,
+  Header18: designFonts.header18,
+  Header20: designFonts.header20,
+  Header22: designFonts.header22,
+  Header26: designFonts.header26,
+  Header30: designFonts.header30,
 }
 
 export enum SpacingEnum {
-  S = Spacing.s,
-  M = Spacing.m,
-  L = Spacing.l,
+  S = designSpacing.s,
+  M = designSpacing.m,
+  L = designSpacing.l,
 }
 
 export enum BorderRadiusEnum {
-  S = BorderRadius.s,
-  M = BorderRadius.m,
-  L = BorderRadius.l,
+  S = designBorderRadius.s,
+  M = designBorderRadius.m,
+  L = designBorderRadius.l,
 }
 
 export enum TextAlignEnum {
@@ -74,6 +84,20 @@ export enum TextAlignEnum {
   Center = 'center',
 }
 
+export enum PlacementsEnum {
+  Left = 'left',
+  Top = 'top',
+  Bottom = 'bottom',
+  Right = 'right',
+  TopStart = 'top-start',
+  TopEnd = 'top-end',
+  RightStart = 'right-start',
+  RightEnd = 'right-end',
+  BottomStart = 'bottom-start',
+  BottomEnd = 'bottom-end',
+  LeftStart = 'left-start',
+  LedftEnd = 'left-end',
+}
 export enum IconsEnum {
   Share = 'share',
   Comment = 'comment',
@@ -153,3 +177,9 @@ export const variantColorMap: Record<VariantsEnum, string> = {
   [VariantsEnum.Secondary]: ColorsEnum.SecondaryMain,
   [VariantsEnum.Text]: ColorsEnum.SecondaryTransparent,
 }
+
+type ValueOf<T> = T[keyof T]
+
+export type FontsEnumType = ValueOf<typeof FontsEnum>
+export type ColorsEnumType = ValueOf<typeof ColorsEnum>
+export type PlacementsEnumType = ValueOf<typeof PlacementsEnum>

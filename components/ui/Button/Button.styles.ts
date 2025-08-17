@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { Colors, Sizes, Spacing } from 'styles/common.style'
+import { designColors, designHeights, designSpacing } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   button: {
@@ -14,38 +14,35 @@ export const styles = StyleSheet.create({
   },
 
   size_s: {
-    height: Sizes.s,
-    minHeight: Sizes.s,
-    paddingHorizontal: Spacing.s,
-    // borderRadius: BorderRadius.m,
+    height: designHeights.s,
+    minHeight: designHeights.s,
+    paddingHorizontal: designSpacing.s,
   },
   size_m: {
-    height: Sizes.m,
-    minHeight: Sizes.m,
-    paddingHorizontal: Spacing.m,
-    // borderRadius: BorderRadius.m,
+    height: designHeights.m,
+    minHeight: designHeights.m,
+    paddingHorizontal: designSpacing.m,
   },
   size_l: {
-    height: Sizes.l,
-    minHeight: Sizes.l,
-    paddingHorizontal: Spacing.l,
-    // borderRadius: BorderRadius.l,
+    height: designHeights.l,
+    minHeight: designHeights.l,
+    paddingHorizontal: designSpacing.l,
   },
 
   variant_primary: {
-    backgroundColor: Colors.primaryMain,
-    borderColor: Colors.primaryMain,
-    color: Colors.primaryInverse,
+    backgroundColor: designColors.primaryMain,
+    borderColor: designColors.primaryMain,
+    color: designColors.primaryInverse,
   },
   variant_secondary: {
-    backgroundColor: Colors.secondaryMain,
-    borderColor: Colors.secondaryInverse,
-    color: Colors.secondaryInverse,
+    backgroundColor: designColors.secondaryMain,
+    borderColor: designColors.secondaryInverse,
+    color: designColors.secondaryInverse,
   },
   variant_text: {
     backgroundColor: 'transparent',
     borderColor: 'transparent',
-    color: Colors.black,
+    color: designColors.black,
     minHeight: 30,
     paddingHorizontal: 0,
     position: 'relative',
@@ -53,14 +50,14 @@ export const styles = StyleSheet.create({
 
   // Active states
   active_primary: {
-    backgroundColor: Colors.primaryInverse,
-    color: Colors.primaryMain,
-    borderColor: Colors.primaryMain,
+    backgroundColor: designColors.primaryInverse,
+    color: designColors.primaryMain,
+    borderColor: designColors.primaryMain,
   },
   active_secondary: {
-    backgroundColor: Colors.secondaryInverse,
-    color: Colors.secondaryMain,
-    borderColor: Colors.black,
+    backgroundColor: designColors.secondaryInverse,
+    color: designColors.secondaryMain,
+    borderColor: designColors.black,
   },
   active_text: {
     backgroundColor: 'transparent',
@@ -68,8 +65,8 @@ export const styles = StyleSheet.create({
   },
 
   disabled: {
-    backgroundColor: Colors.disabledMain,
-    color: Colors.disabledInverse,
+    backgroundColor: designColors.disabledMain,
+    color: designColors.disabledInverse,
     borderWidth: 0,
     opacity: 0.5,
   },

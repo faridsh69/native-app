@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 
-import { FontsEnum, SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
+import { SidesEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 
 import { Icon } from 'components/ui/Icon/Icon'
 
@@ -25,7 +25,7 @@ export const Button = (props: ButtonProps) => {
     noHover = false,
   } = props
 
-  const containerStyle: StyleProp<ViewStyle>[] = [
+  const containerStyle = [
     styles.button,
     styles[`size_${size}`],
     styles[`variant_${variant}`],
@@ -35,14 +35,11 @@ export const Button = (props: ButtonProps) => {
     noBorderRadius.includes(SidesEnum.Right) && styles.noBorderRadius_right,
     noBorderRadius.includes(SidesEnum.Top) && styles.noBorderRadius_top,
     noBorderRadius.includes(SidesEnum.Bottom) && styles.noBorderRadius_bottom,
-    width,
+    { width },
     noHover && styles.noHover,
   ]
 
-  const fontStyle: StyleProp<TextStyle>[] = [
-    font || FontsEnum.Text16,
-    { color: styles[`variant_${variant}`].color },
-  ]
+  const fontStyle = [font, { color: styles[`variant_${variant}`].color }]
 
   return (
     <TouchableOpacity
@@ -52,6 +49,7 @@ export const Button = (props: ButtonProps) => {
       activeOpacity={0.8}
     >
       {iconLeft && <Icon icon={iconLeft} size={size} />}
+      {/* @ts-ignore */}
       <Text style={fontStyle}>{label}</Text>
       {iconRight && <Icon icon={iconRight} size={size} />}
     </TouchableOpacity>

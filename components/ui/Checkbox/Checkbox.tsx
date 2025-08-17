@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleProp, TouchableOpacity, View, ViewStyle } from 'react-native'
 
 import { IconsEnum, SizesEnum } from 'enums/enums'
-import { Colors, Spacing } from 'styles/common.style'
+import { designColors, designSpacing } from 'styles/common.style'
 
 import { Icon } from 'components/ui/Icon/Icon'
 
@@ -21,7 +21,10 @@ export const Checkbox = ({
   hint = '',
   size = SizesEnum.M,
 }: CheckboxProps) => {
-  const containerStyle: StyleProp<ViewStyle> = [styles.wrapper, { paddingLeft: Spacing[size] }]
+  const containerStyle: StyleProp<ViewStyle> = [
+    styles.wrapper,
+    { paddingLeft: designSpacing[size] },
+  ]
 
   const checkboxStyle: StyleProp<ViewStyle> = [
     styles.box,
@@ -42,7 +45,7 @@ export const Checkbox = ({
       accessibilityLabel={label}
     >
       <View style={checkboxStyle}>
-        {checked && <Icon icon={IconsEnum.Check} size={SizesEnum.S} color={Colors.white} />}
+        {checked && <Icon icon={IconsEnum.Check} size={SizesEnum.S} color={designColors.white} />}
       </View>
 
       {label && (

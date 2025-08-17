@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { BorderRadius, Colors, Sizes, Spacing } from 'styles/common.style'
+import { designBorderRadius, designColors, designHeights, designSpacing } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -12,28 +12,28 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: Colors.grey600,
-    borderRadius: BorderRadius.s,
+    borderColor: designColors.grey600,
+    borderRadius: designBorderRadius.s,
   },
 
-  size_s: { width: Sizes.s, height: Sizes.s },
-  size_m: { width: Sizes.m, height: Sizes.m },
-  size_l: { width: Sizes.l, height: Sizes.l },
+  size_s: { width: designHeights.s, height: designHeights.s },
+  size_m: { width: designHeights.m, height: designHeights.m },
+  size_l: { width: designHeights.l, height: designHeights.l },
 
   checked: {
-    backgroundColor: Colors.black,
+    backgroundColor: designColors.black,
   },
   unchecked: {
-    backgroundColor: Colors.white,
+    backgroundColor: designColors.white,
   },
   disabled: {
     opacity: 0.6,
   },
   error: {
-    borderColor: Colors.dangerLight,
+    borderColor: designColors.error,
   },
 
   label: {
-    marginLeft: Spacing.s,
+    marginLeft: designSpacing.s,
   },
 })

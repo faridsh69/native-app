@@ -1,5 +1,4 @@
-export const Colors = {
-  // designColors
+export const designColors = {
   white: '#ffffff',
   black: '#000000',
 
@@ -30,9 +29,7 @@ export const Colors = {
   disabledMain: '#cccccc',
   disabledInverse: '#666666',
 }
-
-export const FontSizes = {
-  // designFonts
+export const designFonts = {
   text12: { fontSize: 12, fontWeight: 400 },
   text14: { fontSize: 14, fontWeight: 400 },
   text16: { fontSize: 16, fontWeight: 400 },
@@ -55,9 +52,9 @@ export const FontSizes = {
   header30: { fontSize: 30, fontWeight: 700 },
 }
 
-export const Spacing = { s: 8, m: 16, l: 20 } // designSpacing
-export const Sizes = { s: 30, m: 40, l: 48 } // designHeights
-export const BorderRadius = { s: 4, m: 6, l: 8 } // designBorderRadius
+export const designSpacing = { s: 8, m: 16, l: 20 }
+export const designHeights = { s: 30, m: 40, l: 48 }
+export const designBorderRadius = { s: 4, m: 6, l: 8 }
 
 // export const inputStyle = {
 //   fontFeatureSettings: "'pnum' on, 'lnum' on",
