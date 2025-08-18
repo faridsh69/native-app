@@ -29,10 +29,12 @@ export const styles = StyleSheet.create({
 
   pressed: {
     backgroundColor: designColors.primaryMain,
+    outlineWidth: 1,
+    outlineStyle: 'solid',
   },
 
   hovered: {
-    backgroundColor: designColors.grey300,
+    backgroundColor: designColors.grey100,
   },
 
   focused: {

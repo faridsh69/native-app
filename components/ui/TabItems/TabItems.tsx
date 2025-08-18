@@ -3,6 +3,7 @@ import React from 'react'
 import { Pressable, ScrollView, Text, View } from 'react-native'
 
 import { DirectionsEnum } from 'enums/enums'
+import { designColors } from 'styles/common.style'
 
 import { styles } from './TabItems.styles'
 import { TabItemsOption, TabItemsProps } from './TabItems.types'
@@ -45,16 +46,24 @@ export const TabItems = (props: TabItemsProps) => {
               isVertical && { width: '100%' },
             ]}
           >
-            {icon && icon}
-            {label && (
-              <Text style={styles.label} numberOfLines={1} ellipsizeMode='tail'>
-                {label}
-              </Text>
-            )}
-            {badge && (
-              <View style={styles.badge}>
-                <Text style={styles.badgeText}>{badge}</Text>
-              </View>
+            {({ pressed }) => (
+              <>
+                {icon && icon}
+                {label && (
+                  <Text
+                    style={[styles.label, pressed && { color: designColors.white }]}
+                    numberOfLines={1}
+                    ellipsizeMode='tail'
+                  >
+                    {label}
+                  </Text>
+                )}
+                {badge && (
+                  <View style={styles.badge}>
+                    <Text style={styles.badgeText}>{badge}</Text>
+                  </View>
+                )}
+              </>
             )}
           </Pressable>
         )
