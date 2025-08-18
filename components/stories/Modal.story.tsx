@@ -56,9 +56,9 @@ export const ModalStory: React.FC = () => {
         }
         actions={
           <View style={{ gap: 10 }}>
-            <Button label='Continue with Email' width={'100%'} />
+            <Button label='Continue with Email' />
             <Text style={styles.or}>or</Text>
-            <Button label='Continue with Gmail' variant={VariantsEnum.Secondary} width={'100%'} />
+            <Button label='Continue with Gmail' variant={VariantsEnum.Secondary} />
           </View>
         }
       />

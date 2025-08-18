@@ -13,6 +13,11 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
   },
 
+  label: {
+    textAlign: 'center',
+    includeFontPadding: false,
+  },
+
   size_s: {
     height: designHeights.s,
     minHeight: designHeights.s,

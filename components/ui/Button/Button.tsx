@@ -39,7 +39,7 @@ export const Button = (props: ButtonProps) => {
     noHover && styles.noHover,
   ]
 
-  const fontStyle = [font, { color: styles[`variant_${variant}`].color }]
+  const fontStyle = [styles.label, font, { color: styles[`variant_${variant}`].color }] as any
 
   return (
     <TouchableOpacity
@@ -49,8 +49,9 @@ export const Button = (props: ButtonProps) => {
       activeOpacity={0.8}
     >
       {iconLeft && <Icon icon={iconLeft} size={size} />}
-      {/* @ts-ignore */}
-      <Text style={fontStyle}>{label}</Text>
+      <Text numberOfLines={1} ellipsizeMode='tail' style={fontStyle}>
+        {label}
+      </Text>
       {iconRight && <Icon icon={iconRight} size={size} />}
     </TouchableOpacity>
   )
