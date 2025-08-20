@@ -29,7 +29,7 @@ export const MainSlider = (props: MainSliderProps) => {
         pagingEnabled={false}
         onConfigurePanGesture={() => ({ enabled: false })}
         renderItem={({ item }) => (
-          <View style={styles.swiperSlide}>
+          <View style={styles.carouselSlide}>
             <View style={styles.slideCard}>
               <Image src={item.src} alt={item.label} width={200} height={200} />
 

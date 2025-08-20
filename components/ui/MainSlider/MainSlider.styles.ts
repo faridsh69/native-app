@@ -4,7 +4,7 @@ import { designColors } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
   wrapper: { width: '100%' },
-  swiperSlide: {
+  carouselSlide: {
     alignItems: 'center',
   },
   slideCard: {
