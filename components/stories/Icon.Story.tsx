@@ -25,7 +25,7 @@ export const IconsStory = () => {
       <View style={styles.row}>
         {iconEntries.map(([name, value]) => (
           <View key={`icon-${String(name)}`} style={styles.cell}>
-            <Icon icon={value as IconsEnum} color={ColorsEnum.Error} size={SizesEnum.M} />
+            <Icon icon={value} color={ColorsEnum.Error} size={SizesEnum.M} />
             <Text style={styles.iconName} numberOfLines={1} ellipsizeMode='tail'>
               {name}
             </Text>

@@ -57,7 +57,7 @@ export const ButtonStory: React.FC = () => {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Left icon</Text>
-        <Button label='Shipping' iconLeft={IconsEnum.Car} />
+        <Button label='Shipping' iconLeft={IconsEnum.Car} variant={VariantsEnum.Secondary} />
       </View>
     </Story>
   )

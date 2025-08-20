@@ -1,28 +1,41 @@
 import { ComponentProps } from 'react'
 
-import { StyleProp, TextStyle } from 'react-native'
-
 import { SymbolWeight } from 'expo-symbols'
 
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons'
 import { IconsEnum, SizesEnum } from 'enums/enums'
 
+import LogoIcon from './svgs/LogoIcon'
+import ViewIcon from './svgs/ViewIcon'
+
 export type IconProps = {
   icon: IconsEnum
   size?: number | SizesEnum
   color?: string
-  style?: StyleProp<TextStyle>
+  style?: any
   weight?: SymbolWeight
   useSF?: boolean
+  className?: string
 }
 
-export const SIZE_MAP: Record<SizesEnum, number> = {
+export const sizeMapping: Record<SizesEnum, number> = {
   [SizesEnum.S]: 16,
   [SizesEnum.M]: 20,
   [SizesEnum.L]: 24,
 }
 
-export const FONT_AWESOME_MAPPING: Partial<
+export const svgMapping: Record<IconsEnum, { Svg: any; viewBox: string }> = {
+  [IconsEnum.View]: {
+    Svg: ViewIcon,
+    viewBox: '0 0 10 10',
+  },
+  [IconsEnum.Logo]: {
+    Svg: LogoIcon,
+    viewBox: '0 0 150 16',
+  },
+}
+
+export const FontAwesomeMapping: Partial<
   Record<IconsEnum, ComponentProps<typeof FontAwesome>['name']>
 > = {
   [IconsEnum.Share]: 'share',
@@ -62,7 +75,7 @@ export const FONT_AWESOME_MAPPING: Partial<
   [IconsEnum.France]: 'flag',
 }
 
-export const MATERIAL_ICON_MAPPING: Partial<
+export const MaterialIconMapping: Partial<
   Record<IconsEnum, ComponentProps<typeof MaterialIcons>['name']>
 > = {
   [IconsEnum.Check]: 'check',
