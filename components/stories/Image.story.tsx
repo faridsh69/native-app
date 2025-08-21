@@ -18,7 +18,7 @@ export const ImageStory: React.FC = () => {
   for (const src of [bigSizeImage, IMAGE_URLS.trash, IMAGE_URLS.ok]) {
     propsArray.push({
       src,
-      height: 300,
+      height: 150,
       keepRatio: true,
     })
   }
@@ -33,7 +33,7 @@ export const ImageStory: React.FC = () => {
 
       <View style={[styles.image]}>
         {propsArray.map((props, index) => (
-          <View key={index} style={{ width: 300, marginRight: 12 }}>
+          <View key={index} style={{ width: 100 }}>
             <Image alt='big size image' {...props} />
           </View>
         ))}

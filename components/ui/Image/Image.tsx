@@ -9,10 +9,10 @@ import { styles } from './Image.styles'
 import { ImageProps } from './Image.types'
 
 export const Image = (props: ImageProps) => {
-  const { src, alt = 'image', width, height, borderRadius = '0px', keepRatio = true } = props
+  const { src, alt = 'image', width, height, borderRadius = 10, keepRatio = true } = props
 
   const [imageState, setImageState] = useState(IMAGE_STATES.loading)
-  const [mountingTime] = useState(new Date().getTime())
+  const [mountingTime] = useState(Date.now())
 
   const handleLoadImage = () => {
     const loadedTime = new Date().getTime() - mountingTime
@@ -24,27 +24,23 @@ export const Image = (props: ImageProps) => {
 
     setImageState(IMAGE_STATES.loaded)
   }
+  const source: ImageSource = typeof src === 'string' ? { uri: src } : src
 
-  const resolvedSource: ImageSource = typeof src === 'string' ? { uri: src } : src
-
-  const containerStyle: any = { width, height, borderRadius, overflow: 'hidden' }
+  const containerStyle: any = [{ width: width ?? '100%', height, overflow: 'hidden', borderRadius }]
 
   const transition = imageState === IMAGE_STATES.cached ? 0 : 400
 
-  const imageStyles: any = [
-    imageState === IMAGE_STATES.loading && styles.loading,
-    { width: '100%', height: '100%', borderRadius },
-  ]
+  const contentFit = keepRatio ? 'contain' : 'fill'
+
+  const imageStyles: any = [styles.img, imageState === IMAGE_STATES.loading && styles.loading]
 
   return (
     <View style={[containerStyle]} accessible accessibilityLabel={alt}>
-      {/* Add a Skeleton here based on `imageState === IMAGE_STATES.loading` */}
+      {imageState === IMAGE_STATES.loading && <View style={styles.skeleton} />}
       <ExpoImage
-        source={resolvedSource}
-        onLoadStart={() => setImageState(IMAGE_STATES.loading)}
+        source={source}
         onLoadEnd={handleLoadImage}
-        onError={handleLoadImage} // also hide skeleton on error
-        contentFit={keepRatio ? 'cover' : 'contain'}
+        contentFit={contentFit}
         transition={transition}
         style={imageStyles}
       />

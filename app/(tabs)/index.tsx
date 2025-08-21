@@ -4,6 +4,7 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 
 import { ButtonStory } from 'components/stories/Button.story'
 import { IconsStory } from 'components/stories/Icon.story'
+import { ImageStory } from 'components/stories/Image.story'
 import { LabelStory } from 'components/stories/Label.story'
 import { LoaderStory } from 'components/stories/Loader.story'
 import { ModalStory } from 'components/stories/Modal.story'
@@ -16,6 +17,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
+          <ImageStory />
           <IconsStory />
           <LabelStory />
           <ButtonStory />
@@ -24,8 +26,7 @@ export default function HomeScreen() {
           <LoaderStory />
           <TextareaStory />
           <ModalStory />
-          {/* <ImageStory />
-          <SliderStory /> */}
+          {/* <SliderStory /> */}
         </View>
       </ScrollView>
     </SafeAreaView>
