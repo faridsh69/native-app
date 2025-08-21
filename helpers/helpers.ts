@@ -1,5 +1,4 @@
 // import { toastSuccess } from 'components/Toast/Toast'
-import { ENVS } from 'constants/constants'
 
 export const isUndefined = (variable: any): boolean => typeof variable === 'undefined'
 
@@ -7,11 +6,9 @@ export const isNull = (variable: any): boolean => variable === null
 
 export const isArray = (variable: any): boolean => Array.isArray(variable)
 
-// @ts-ignore
-export const isProd = () => (window.process ? process?.env?.NODE_ENV === ENVS.production : false)
+export const isProd = () => !__DEV__
 
-// @ts-ignore
-export const isDev = () => (window.process ? process?.env?.NODE_ENV === ENVS.development : false)
+export const isDev = () => __DEV__
 
 export const isString = (variable: any): variable is string => typeof variable === 'string'
 

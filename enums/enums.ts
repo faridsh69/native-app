@@ -40,6 +40,8 @@ export const ColorsEnum = {
   SecondaryTransparent: designColors.secondaryTransparent,
 
   Error: designColors.error,
+  Success: designColors.success,
+  Warning: designColors.warning,
   Disabled: designColors.disabledMain,
 }
 

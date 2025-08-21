@@ -27,7 +27,6 @@ export const Icon = (props: IconProps) => {
         height={height}
         preserveAspectRatio='http://www.w3.org/2000/svg'
         fill={'transparent'}
-        color={color}
         className={className}
       >
         <SvgIcon />

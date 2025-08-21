@@ -4,6 +4,7 @@ import { APP_PATHS } from 'constants/constants'
 import { ColorsEnum, FontsEnum, IconsEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 import { isNumber } from 'helpers/helpers'
 import { useChangePath } from 'hooks/useChangePath'
+import { useAuth } from 'services/hooks/useAuth'
 
 import { Avatar } from '../Avatar/Avatar'
 import { Button } from '../Button/Button'
@@ -28,10 +29,9 @@ export const UserInfo = (props: UserInfoProps) => {
 
   const followersLabel = isNumber(followersCount) ? `${followersCount} followers` : ''
   const likesLabel = isNumber(likesCount) ? `${likesCount} likes` : ''
-  // const { authUser } = useAuth()
+  const { authUser } = useAuth()
 
-  // const isAuthUser = authUser.user_id === userId
-  const isAuthUser = true
+  const isAuthUser = authUser.user_id === userId
 
   const { navigate } = useChangePath()
   const handleRedirectUser = () => {
@@ -49,9 +49,7 @@ export const UserInfo = (props: UserInfoProps) => {
               label={username}
               variant={VariantsEnum.Text}
               size={SizesEnum.S}
-              // RN uses onPress; if your Button expects onClick, keep both (TS ignore) or adapt inside Button
               onPress={handleRedirectUser}
-              // @ts-ignore
               onClick={handleRedirectUser}
             />
 
