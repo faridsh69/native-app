@@ -89,3 +89,14 @@ export const BOLD_FONTS_SIZES_MAP = {
   [SizesEnum.M]: FontsEnum.Header16,
   [SizesEnum.L]: FontsEnum.Header18,
 }
+
+export const APP_PATHS = {
+  home: '/',
+  uikit: '/uikit',
+  apis: '/apis',
+  wines: '/wines',
+  community: '/community',
+  communityReview: '/community/review',
+  communityUser: '/community/user/:userId',
+  profile: '/profile',
+}

@@ -3,6 +3,7 @@ export type ImageProps = {
   alt?: string
   width?: number | string
   height?: number | string
-  borderRadius?: string
+  borderRadius?: number
   keepRatio?: boolean
+  aspectRatio?: number
 }

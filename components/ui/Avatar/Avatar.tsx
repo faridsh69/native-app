@@ -1,30 +1,41 @@
 import React from 'react'
 
-import { Image, ImageStyle, StyleProp, View, ViewStyle } from 'react-native'
+import { StyleProp, View, ViewStyle } from 'react-native'
 
 import { IconsEnum, SizesEnum } from 'enums/enums'
 
 import { Icon } from 'components/ui/Icon/Icon'
 
-import { iconSize, styles } from './Avatar.styles'
+import { Image } from '../Image/Image'
+import { styles } from './Avatar.styles'
 import { AvatarProps } from './Avatar.types'
 
-export const Avatar = ({ avatar, size = SizesEnum.M }: AvatarProps) => {
-  const containerStyle: StyleProp<ViewStyle> = [styles.avatar, styles[`size_${size}`]]
+export const Avatar = (props: AvatarProps) => {
+  const { src, alt, size = SizesEnum.M, width } = props
 
-  const imageStyle: StyleProp<ImageStyle> = [styles.image]
+  const containerStyle: StyleProp<ViewStyle> = [
+    styles.avatar,
+    !width && styles[`size_${size}`],
+    { width },
+    { height: width },
+  ]
 
   return (
     <View
       style={containerStyle}
       accessibilityRole='image'
-      accessibilityLabel={avatar ? 'User avatar' : 'Default avatar'}
+      accessibilityLabel={src ? 'User avatar' : 'Default avatar'}
     >
-      {avatar ? (
-        <Image source={{ uri: avatar }} style={imageStyle} resizeMode='cover' />
-      ) : (
-        <Icon icon={IconsEnum.User} size={iconSize[size]} />
+      {!!src && (
+        <Image
+          src={src}
+          alt={alt || 'user avatar'}
+          width={width}
+          height={width}
+          borderRadius={width ? width / 2 : 0}
+        />
       )}
+      {!src && <Icon icon={IconsEnum.User} />}
     </View>
   )
 }

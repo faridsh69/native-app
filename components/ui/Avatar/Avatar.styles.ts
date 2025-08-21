@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 
-import { SizesEnum } from 'enums/enums'
 import { designColors, designHeights } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
@@ -20,23 +19,23 @@ export const styles = StyleSheet.create({
 
   size_s: {
     width: designHeights.s,
+    minWidth: designHeights.s,
     height: designHeights.s,
+    minHeight: designHeights.s,
     borderRadius: designHeights.s / 2,
   },
   size_m: {
     width: designHeights.m,
+    minWidth: designHeights.m,
     height: designHeights.m,
+    minHeight: designHeights.m,
     borderRadius: designHeights.m / 2,
   },
   size_l: {
     width: designHeights.l,
+    minWidth: designHeights.l,
     height: designHeights.l,
+    minHeight: designHeights.l,
     borderRadius: designHeights.l / 2,
   },
 })
-
-export const iconSize: Record<SizesEnum, number> = {
-  [SizesEnum.S]: designHeights.s * 0.5,
-  [SizesEnum.M]: designHeights.m * 0.5,
-  [SizesEnum.L]: designHeights.l * 0.5,
-}

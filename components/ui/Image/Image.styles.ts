@@ -3,9 +3,8 @@ import { StyleSheet } from 'react-native'
 import { designColors } from 'styles/common.style'
 
 export const styles = StyleSheet.create({
-  img: {
-    width: '100%',
-    height: '100%',
+  container: {
+    overflow: 'hidden',
   },
 
   loading: {
