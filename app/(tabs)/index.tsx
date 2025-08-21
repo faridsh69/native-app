@@ -4,12 +4,10 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 
 import { ButtonStory } from 'components/stories/Button.story'
 import { IconsStory } from 'components/stories/Icon.story'
-import { ImageStory } from 'components/stories/Image.story'
 import { LabelStory } from 'components/stories/Label.story'
 import { LoaderStory } from 'components/stories/Loader.story'
 import { ModalStory } from 'components/stories/Modal.story'
 import { RatingStory } from 'components/stories/Rating.story'
-import { SliderStory } from 'components/stories/SliderStory'
 import { TabItemsStory } from 'components/stories/TabItems.story'
 import { TextareaStory } from 'components/stories/Textarea.story'
 
@@ -26,8 +24,8 @@ export default function HomeScreen() {
           <LoaderStory />
           <TextareaStory />
           <ModalStory />
-          <ImageStory />
-          <SliderStory />
+          {/* <ImageStory />
+          <SliderStory /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -1,64 +1,40 @@
 import React from 'react'
 
-import { Platform } from 'react-native'
-
-import { SymbolView } from 'expo-symbols'
-
 import { FontAwesome } from '@expo/vector-icons'
-import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import { ColorsEnum, SizesEnum } from 'enums/enums'
 import Svg from 'react-native-svg'
 
-import {
-  FontAwesomeMapping,
-  IconProps,
-  MaterialIconMapping,
-  sizeMapping,
-  svgMapping,
-} from './Icon.types'
+import { FontAwesomeMapping, sizeMapping, svgMapping } from './Icon.constants'
+import { IconProps } from './Icon.types'
 
 export const Icon = (props: IconProps) => {
   const { icon, size = SizesEnum.M, color = ColorsEnum.Black, className, style } = props
-  const height = typeof size === 'number' ? size : sizeMapping[size]
+
+  if (!icon) return <></>
+
   const svgData = svgMapping[icon]
+  const height = sizeMapping[size]
 
   if (svgData) {
-    const { Svg: IconPaths, viewBox } = svgData
+    const { Svg: SvgIcon, viewBox } = svgData
+    const [svgWidth] = viewBox.split(' ').map(Number)
 
     return (
       <Svg
-        width={height}
+        viewBox={`0 0 ${viewBox}`}
+        style={style}
+        width={svgWidth}
         height={height}
-        viewBox={viewBox}
+        preserveAspectRatio='http://www.w3.org/2000/svg'
         fill={'transparent'}
         color={color}
-        style={style}
         className={className}
       >
-        <IconPaths />
+        <SvgIcon />
       </Svg>
-    )
-  }
-
-  if (Platform.OS === 'ios') {
-    const sfName = icon ? MaterialIconMapping[icon] : undefined
-
-    return (
-      <SymbolView
-        // @ts-ignore
-        name={sfName}
-        weight='regular'
-        tintColor={color}
-        resizeMode='scaleAspectFit'
-        style={[{ width: height, height: height }]}
-      />
     )
   }
 
   const faName = FontAwesomeMapping[icon]
   if (faName) return <FontAwesome name={faName} size={height} color={color} style={style} />
-
-  // MaterialIcons (Android/Web)
-  const miName = MaterialIconMapping[icon] || 'help-outline'
-  return <MaterialIcons name={miName} size={height} color={color} style={style} />
 }
