@@ -10,6 +10,7 @@ import { LabelStory } from 'components/stories/Label.story'
 import { LoaderStory } from 'components/stories/Loader.story'
 import { ModalStory } from 'components/stories/Modal.story'
 import { RatingStory } from 'components/stories/Rating.story'
+import { SliderStory } from 'components/stories/SliderStory'
 import { TabItemsStory } from 'components/stories/TabItems.story'
 import { TextareaStory } from 'components/stories/Textarea.story'
 import { ToastStory } from 'components/stories/ToastStory'
@@ -30,7 +31,7 @@ export default function HomeScreen() {
           <LoaderStory />
           <TextareaStory />
           <ModalStory />
-          {/* <SliderStory /> */}
+          <SliderStory />
         </View>
       </ScrollView>
     </SafeAreaView>

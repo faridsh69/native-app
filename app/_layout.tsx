@@ -6,12 +6,14 @@ import { StatusBar } from 'expo-status-bar'
 
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { useColorScheme } from 'hooks/useColorScheme'
 import 'react-native-gesture-handler'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Toast from 'react-native-toast-message'
+import { QUERY_CLIENT } from 'services/apis/queryConstants'
 
 import { toastConfig } from 'components/ui/Toast/Toast'
 
@@ -26,16 +28,18 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <BottomSheetModalProvider>
-        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-          <Stack>
-            <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-            <Stack.Screen name='+not-found' />
-          </Stack>
-          <StatusBar style='auto' />
-          <Toast config={toastConfig} position='bottom' bottomOffset={insets.bottom + 82} />
-        </ThemeProvider>
-      </BottomSheetModalProvider>
+      <QueryClientProvider client={QUERY_CLIENT}>
+        <BottomSheetModalProvider>
+          <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <Stack>
+              <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+              <Stack.Screen name='+not-found' />
+            </Stack>
+            <StatusBar style='auto' />
+            <Toast config={toastConfig} position='bottom' bottomOffset={insets.bottom + 82} />
+          </ThemeProvider>
+        </BottomSheetModalProvider>
+      </QueryClientProvider>
     </GestureHandlerRootView>
   )
 }

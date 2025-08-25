@@ -6,10 +6,11 @@ import { isNumber } from 'helpers/helpers'
 import { useChangePath } from 'hooks/useChangePath'
 import { useAuth } from 'services/hooks/useAuth'
 
-import { Avatar } from '../Avatar/Avatar'
-import { Button } from '../Button/Button'
-import { Icon } from '../Icon/Icon'
-import { Label } from '../Label/Label'
+import { Avatar } from 'components/ui/Avatar/Avatar'
+import { Button } from 'components/ui/Button/Button'
+import { Icon } from 'components/ui/Icon/Icon'
+import { Label } from 'components/ui/Label/Label'
+
 import { styles } from './UserInfo.styles'
 import { UserInfoProps } from './UserInfo.types'
 
