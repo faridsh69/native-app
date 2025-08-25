@@ -8,6 +8,7 @@ import { ColorsTheme } from 'constants/Colors'
 import { useColorScheme } from 'hooks/useColorScheme'
 
 import { HapticTab } from 'components/HapticTab'
+import { HeaderNavbar } from 'components/Templates/HeaderNavbar/HeaderNavbar'
 import { IconSymbol } from 'components/ui/IconSymbol'
 import TabBarBackground from 'components/ui/TabBarBackground'
 
@@ -17,13 +18,12 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        header: () => <HeaderNavbar />,
         tabBarActiveTintColor: ColorsTheme[colorScheme ?? 'light'].tint,
-        headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
           default: {},
