@@ -3,6 +3,7 @@ import { ComponentProps } from 'react'
 import { FontAwesome } from '@expo/vector-icons'
 import { IconsEnum, SizesEnum } from 'enums/enums'
 
+import EmptyWineIcon from './svgs/EmptyWineIcon'
 import LogoIcon from './svgs/LogoIcon'
 import ViewIcon from './svgs/ViewIcon'
 
@@ -20,6 +21,10 @@ export const svgMapping: any = {
   [IconsEnum.Logo]: {
     Svg: LogoIcon,
     viewBox: '150 16',
+  },
+  [IconsEnum.EmptyWine]: {
+    Svg: EmptyWineIcon,
+    viewBox: '58 240',
   },
 }
 
@@ -62,4 +67,5 @@ export const FontAwesomeMapping: Partial<
   [IconsEnum.Error]: 'times-circle',
   [IconsEnum.France]: 'flag',
   [IconsEnum.Night]: 'moon-o',
+  [IconsEnum.Pencil]: 'pencil',
 }

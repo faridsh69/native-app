@@ -4,11 +4,14 @@ import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 
 import AvatarsStory from 'components/stories/AvatarsStory'
 import { ButtonStory } from 'components/stories/Button.story'
+import { ChipStory } from 'components/stories/Chip.story'
+import { DataNotFoundStory } from 'components/stories/DataNotFound.story'
 import { IconsStory } from 'components/stories/Icon.story'
 import { ImageStory } from 'components/stories/Image.story'
 import { LabelStory } from 'components/stories/Label.story'
 import { LoaderStory } from 'components/stories/Loader.story'
 import { ModalStory } from 'components/stories/Modal.story'
+import { ProductCardStory } from 'components/stories/ProductCardStory'
 import { RatingStory } from 'components/stories/Rating.story'
 import { SliderStory } from 'components/stories/SliderStory'
 import { TabItemsStory } from 'components/stories/TabItems.story'
@@ -20,6 +23,9 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
+          <ProductCardStory />
+          <DataNotFoundStory />
+          <ChipStory />
           <ToastStory />
           <AvatarsStory />
           <ImageStory />
@@ -43,10 +49,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    padding: 32,
+    paddingHorizontal: 12,
   },
   container: {
     flexDirection: 'column',
-    gap: 8,
   },
 })

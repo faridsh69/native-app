@@ -9,7 +9,7 @@ import { ColorsTheme } from 'constants/Colors'
 import { APP_PATHS } from 'constants/constants'
 import { IconsEnum, SizesEnum, VariantsEnum } from 'enums/enums'
 import { useColorScheme } from 'hooks/useColorScheme'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useAuth } from 'services/hooks/useAuth'
 
 import { Button } from 'components/ui/Button/Button'
@@ -50,20 +50,13 @@ export const Navbar = ({ options, logoPressPath = '/' }: NavbarProps) => {
   }
 
   return (
-    <View
-      style={[
-        styles.header,
-        { paddingTop: insets.bottom + 52, borderBottomColor: colors.secondary },
-      ]}
-    >
-      <View style={styles.logoBtn} hitSlop={10}>
-        <Button
-          iconRight={IconsEnum.Logo}
-          variant={VariantsEnum.Text}
-          size={SizesEnum.S}
-          onClick={() => handleClickPath(logoPressPath)}
-        />
-      </View>
+    <SafeAreaView style={[styles.header]}>
+      <Button
+        iconRight={IconsEnum.Logo}
+        variant={VariantsEnum.Text}
+        size={SizesEnum.S}
+        onClick={() => handleClickPath(logoPressPath)}
+      />
 
       {/* <View style={styles.options}>
         {options.map(opt => (
@@ -105,6 +98,6 @@ export const Navbar = ({ options, logoPressPath = '/' }: NavbarProps) => {
           onClick={() => handleClickPath('/basket')}
         />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }

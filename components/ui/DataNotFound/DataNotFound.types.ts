@@ -5,5 +5,5 @@ export type DataNotFoundProps = {
   label?: string
   icon?: IconsEnum | null
   image?: string
-  className?: string
+  style?: string
 }

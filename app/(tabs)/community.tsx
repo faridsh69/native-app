@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, View } from 'react-native'
+import { SafeAreaView, View } from 'react-native'
 
 import { DirectionsEnum } from 'enums/enums'
 import { usePersistState } from 'hooks/usePersistState'
@@ -41,10 +41,9 @@ export default function TabCommunityScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.row}>
-          {/* Left column */}
-          {/* <View style={styles.leftColumn}>
+      <View style={styles.row}>
+        {/* Left column */}
+        {/* <View style={styles.leftColumn}>
           <View style={styles.leftSidebar}>
             <UserInfo
               userId={authUser.user_id}
@@ -57,22 +56,22 @@ export default function TabCommunityScreen() {
           </View>
         </View> */}
 
-          {/* Center column */}
-          <View style={styles.centerColumn}>
-            <View style={styles.tabContent}>
-              <TabItems
-                value={tab}
-                onChange={setTab}
-                direction={DirectionsEnum.Horizontal}
-                options={TABS}
-              />
-              {TAB_VALUES.lastActivity === tab && <LastActivityTab />}
-              {/* {TAB_VALUES.myFeed === tab && <MyFeedTab />} */}
-              {TAB_VALUES.notification === tab && <DataNotFound label='No notifications' />}
-            </View>
+        {/* Center column */}
+        <View style={styles.centerColumn}>
+          <View style={styles.tabContent}>
+            <TabItems
+              value={tab}
+              onChange={setTab}
+              direction={DirectionsEnum.Horizontal}
+              options={TABS}
+            />
+            {TAB_VALUES.lastActivity === tab && <LastActivityTab />}
+            {/* {TAB_VALUES.myFeed === tab && <MyFeedTab />} */}
+            {TAB_VALUES.notification === tab && <DataNotFound label='No notifications' />}
           </View>
+        </View>
 
-          {/* <View style={styles.rightColumn}>
+        {/* <View style={styles.rightColumn}>
             <View style={styles.rightSidebar}>
               <PostReviewCreation />
               {isUsersLoading && <SkeletonUserInfo />}
@@ -91,8 +90,7 @@ export default function TabCommunityScreen() {
               <NewsList />
             </View>
           </View> */}
-        </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   )
 }

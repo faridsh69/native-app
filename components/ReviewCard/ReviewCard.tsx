@@ -5,6 +5,8 @@ import { getRelativeTime } from 'helpers/dateHelpers'
 import { getIsPost } from 'helpers/logicHelpers'
 import { useAuth } from 'services/hooks/useAuth'
 
+import { ProductCardHorizontal } from 'components/ProductCardHorizontal/ProductCardHorizontal'
+import { CommentAction } from 'components/Templates/CommentAction/CommentAction'
 import { UserInfo } from 'components/UserInfo/UserInfo'
 import { Image } from 'components/ui/Image/Image'
 import { Label } from 'components/ui/Label/Label'
@@ -76,17 +78,20 @@ export const ReviewCard = (props: ReviewCardProps) => {
           horizontal
           data={review.image_urls}
           keyExtractor={src => src}
-          // contentContainerStyle={styles.images}
-          showsHorizontalScrollIndicator={false}
           renderItem={({ item: src }) => (
             <Image src={src} width={120} height={100} borderRadius={12} />
           )}
+          contentContainerStyle={styles.images}
+          showsHorizontalScrollIndicator={false}
+          removeClippedSubviews
+          initialNumToRender={3}
+          windowSize={5}
         />
       )}
 
-      {/* {!isPost && <ProductCardHorizontal wine={wine} />} */}
+      {!isPost && <ProductCardHorizontal wine={wine} />}
 
-      {/* <CommentAction review={review} /> */}
+      <CommentAction review={review} />
     </View>
   )
 }

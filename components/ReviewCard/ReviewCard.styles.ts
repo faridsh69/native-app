@@ -5,11 +5,11 @@ import { designColors } from 'styles/common.style'
 export const styles = StyleSheet.create({
   reviewCard: {
     padding: 14,
-    borderWidth: 1,
-    borderColor: '#D9D9D9', // map of var(--grey-300); adjust to your theme token if you have one
+    borderBottomWidth: 1,
+    borderBottomColor: designColors.grey300,
     borderRadius: 12,
     flexDirection: 'column',
-    gap: 20 as unknown as number, // if your RN version supports gap, remove the cast; otherwise use margins
+    gap: 20,
   },
   header: {
     flexDirection: 'row',
@@ -21,11 +21,11 @@ export const styles = StyleSheet.create({
   },
   images: {
     flexDirection: 'row',
-    gap: 12 as unknown as number, // see note above
+    gap: 12,
   },
   image: {
     overflow: 'hidden',
-    marginRight: 12, // fallback if 'gap' isn't supported
+    marginRight: 12,
   },
   container: { width: '100%' },
   card: { marginBottom: 12, borderRadius: 12 },

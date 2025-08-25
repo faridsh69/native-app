@@ -1,11 +1,14 @@
 import { StyleSheet } from 'react-native'
 
+import { designColors } from 'styles/common.style'
+
 export const styles = StyleSheet.create({
   header: {
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingBottom: 8,
     borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: designColors.white,
     backgroundColor: 'transparent',
   },
   logoBtn: {},

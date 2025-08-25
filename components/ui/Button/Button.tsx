@@ -48,7 +48,7 @@ export const Button = (props: ButtonProps) => {
       style={containerStyle}
       activeOpacity={0.8}
     >
-      {iconLeft && <Icon icon={iconLeft} size={size} />}
+      {iconLeft && <Icon icon={iconLeft} size={size} color={styles[`variant_${variant}`].color} />}
       <Text numberOfLines={1} ellipsizeMode='tail' style={fontStyle}>
         {label}
       </Text>

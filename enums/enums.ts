@@ -140,6 +140,7 @@ export enum IconsEnum {
   Error = 'error',
   France = 'france',
   EmptyWine = 'emptyWine',
+  Pencil = 'pencil',
 
   // Calendar = 'calendar',
   // Edit = 'edit',
@@ -197,3 +198,18 @@ export type FontsEnumType = ValueOf<typeof FontsEnum>
 export type ColorsEnumType = ValueOf<typeof ColorsEnum>
 export type PlacementsEnumType = ValueOf<typeof PlacementsEnum>
 export type DirectionsEnumType = ValueOf<typeof DirectionsEnum>
+
+export const SIZE_MAP_CHIP: Record<SizesEnum, { height: number; paddingHorizontal: number }> = {
+  [SizesEnum.S]: { height: 30, paddingHorizontal: 10 },
+  [SizesEnum.M]: { height: 36, paddingHorizontal: 12 },
+  [SizesEnum.L]: { height: 40, paddingHorizontal: 14 },
+}
+
+export enum CountriesEnum {
+  Fr = 'fr',
+  It = 'it',
+  Us = 'us',
+  Cl = 'cl',
+  Sp = 'sp',
+  Au = 'au',
+}

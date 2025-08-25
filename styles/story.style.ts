@@ -14,7 +14,7 @@ export const storyStyles = StyleSheet.create({
   },
 
   story: {
-    width: '90%',
+    width: '100%',
     flexDirection: 'column',
     gap: 20,
     borderLeftWidth: 1,
